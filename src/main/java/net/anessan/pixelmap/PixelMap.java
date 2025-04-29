@@ -1,16 +1,18 @@
 package net.anessan.pixelmap;
 
-import net.fabricmc.api.ModInitializer;
+import net.fabricmc.api.ClientModInitializer;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class PixelMap implements ModInitializer {
-	public static final String MOD_ID = "pixelmap";
-	public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+public class PixelMap implements ClientModInitializer {
+	public static final String ID = "pixelmap";
+	public static final String NAME = "Pixel Map";
+
+	public static final Logger LOGGER = LoggerFactory.getLogger(NAME);
 
 	@Override
-	public void onInitialize() {
-		LOGGER.info("Hello Fabric world!");
+	public void onInitializeClient() {
+		PixelMapKeybindings.init();
 	}
 }
